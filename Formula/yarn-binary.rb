@@ -24,7 +24,7 @@ class YarnBinary < Formula
         inreplace "#{libexec}/package.json", '"installationMethod": "tar"', '"installationMethod": "homebrew"'
     end
 
-    def caveats; <<-EOS.undent
+    def caveats; <<~EOS
         This formula differs from the original one,
         as it doesn't have any dependencies,
         and is downloading tarball from github or mirror site instead of official site.

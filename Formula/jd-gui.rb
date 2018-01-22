@@ -11,7 +11,7 @@ class JdGui < Formula
     def install
         prefix.install Dir["*"]
         
-        (prefix/"jdgui").write <<-EOS.undent
+        (prefix/"jdgui").write <<~EOS
             #!/usr/bin/env bash
             java -jar "$(brew --prefix jd-gui)/jd-gui-#{version}.jar"
         EOS
@@ -20,7 +20,7 @@ class JdGui < Formula
         bin.install_symlink("#{prefix}/jdgui")
     end
 
-    def caveats; <<-EOS.undent
+    def caveats; <<~EOS
         Executable is linked as "jdgui".
         You need to call "nohup bash -c jdgui >/dev/null 2>&1 &" to run it in the background.
         Please NOTE that jd-gui will create a "jd-gui.cfg" file in the folder where you call that command.

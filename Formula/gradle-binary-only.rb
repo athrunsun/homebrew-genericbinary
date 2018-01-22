@@ -16,7 +16,7 @@ class GradleBinaryOnly < Formula
         assert_match version.to_s, shell_output("#{bin}/gradle --version")
     end
 
-    def caveats; <<-EOS.undent
+    def caveats; <<~EOS
         This formula differs from the original one,
         as it doesn't have any dependencies,
         and is installing with the binary-only zip,
