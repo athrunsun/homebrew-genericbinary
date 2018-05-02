@@ -1,7 +1,7 @@
 class YarnBinary < Formula
     desc "JavaScript package manager, binary install (without any dependencies)."
     homepage "https://github.com/yarnpkg/yarn"
-    version "1.5.1"
+    version "1.6.0"
 
     option "with-taobao-mirror", "Download tarball from https://npm.taobao.org/mirrors/yarn/, use this option if you're in mainland China for a faster downloading speed."
 
@@ -11,11 +11,12 @@ class YarnBinary < Formula
         url "https://github.com/yarnpkg/yarn/releases/download/v#{version}/yarn-v#{version}.tar.gz"
     end
 
-    sha256 "cd31657232cf48d57fdbff55f38bfa058d2fb4950450bd34af72dac796af4de1"
+    sha256 "a57b2fdb2bfeeb083d45a883bc29af94d5e83a21c25f3fc001c295938e988509"
 
     bottle :unneeded
 
-    conflicts_with "yarn"
+    conflicts_with "yarn", :because => "both install `yarn` binaries"
+    conflicts_with "hadoop", :because => "both install `yarn` binaries"
 
     def install
         libexec.install Dir["*"]
