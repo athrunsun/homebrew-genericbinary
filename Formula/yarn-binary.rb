@@ -6,7 +6,7 @@ class YarnBinary < Formula
     option "with-taobao-mirror", "Download tarball from https://npm.taobao.org/mirrors/yarn, use this option if you're in mainland China for a faster downloading speed."
 
     if build.with? "taobao-mirror"
-        url "https://npm.taobao.org/mirrors/yarn/#{version}/yarn-v#{version}.tar.gz"
+        url "https://npm.taobao.org/mirrors/yarn/v#{version}/yarn-v#{version}.tar.gz"
     else
         url "https://github.com/yarnpkg/yarn/releases/download/v#{version}/yarn-v#{version}.tar.gz"
     end
