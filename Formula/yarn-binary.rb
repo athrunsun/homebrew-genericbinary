@@ -1,9 +1,9 @@
 class YarnBinary < Formula
     desc "JavaScript package manager, binary install (without any dependencies)."
     homepage "https://github.com/yarnpkg/yarn"
-    version "1.9.4"
+    version "1.10.1"
 
-    option "with-taobao-mirror", "Download tarball from https://npm.taobao.org/mirrors/yarn/, use this option if you're in mainland China for a faster downloading speed."
+    option "with-taobao-mirror", "Download tarball from https://npm.taobao.org/mirrors/yarn, use this option if you're in mainland China for a faster downloading speed."
 
     if build.with? "taobao-mirror"
         url "https://npm.taobao.org/mirrors/yarn/#{version}/yarn-v#{version}.tar.gz"
@@ -11,7 +11,7 @@ class YarnBinary < Formula
         url "https://github.com/yarnpkg/yarn/releases/download/v#{version}/yarn-v#{version}.tar.gz"
     end
 
-    sha256 "7667eb715077b4bad8e2a832e7084e0e6f1ba54d7280dc573c8f7031a7fb093e"
+    sha256 "97bf147cb28229e66e4e3c5733a93c851bbcb0f10fbc72696ed011774f4c6f1b"
 
     bottle :unneeded
 
@@ -26,9 +26,11 @@ class YarnBinary < Formula
     end
 
     def caveats; <<~EOS
+        Executable is linked as 'yarn' and 'yarnpkg'.
+        
         This formula differs from the original one,
         as it doesn't have any dependencies,
-        and is able to download tarball from github or mirror site instead of official site.
+        and you can choose to download from either github or China mirror site.
         EOS
     end
 end
